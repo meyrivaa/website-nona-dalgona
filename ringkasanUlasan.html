@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringkasan Ulasan - Noona Dalgona</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .review-card {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-header {
+            background-color: #ffc0cb;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .star-rating {
+            color: #FFD700;
+            font-size: 24px;
+        }
+
+        .review-stats {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .highlight-review {
+            border-left: 4px solid #ffc0cb;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #ffc0cb !important">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="logo.html">
+                    <img src="1.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <span style="font-family: 'Brush Script MT', cursive;">Noona Dalgona</span>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="beranda.html">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="makanan.html">Makanan</a></li>
+                                <li><a class="dropdown-item" href="minuman.html">Minuman</a></li>
+                                <li><a class="dropdown-item" href="paket.html">Paket Sepesial</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ringkasanUlasan.html">Ringkasan Ulasan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Masuk/Daftar</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search" onsubmit="activateBrowserSearch(event)">
+                        <input class="form-control me-2" type="search" placeholder="Ketik disini" aria-label="Search"
+                            id="searchInput">
+                        <button class="btn btn-outline-success" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center" style="font-family: 'Brush Script MT', cursive;">Apa Kata Noona Lovers? 💕</h1>
+
+        <!-- Rating Overview -->
+        <div class="review-stats mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <h1 class="display-1 fw-bold">4.8</h1>
+                    <div class="star-rating">★★★★★</div>
+                    <p class="text-muted">Dari 248 ulasan</p>
+                </div>
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>5 Bintang</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%"
+                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>4 Bintang</span>
+                            <span>10%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>3 Bintang</span>
+                            <span>3%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 3%" aria-valuenow="3"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>2 Bintang</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="1"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>1 Bintang</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 1%" aria-valuenow="1"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlighted Reviews -->
+        <h3 class="mb-4">Testimoni Favorit 🌟</h3>
+
+        <div class="row mb-5">
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="review-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Dini Pratiwi</h5>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                        <p class="text-muted mb-0">2 minggu yang lalu</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">"Bakso pedas ala Korea-nya juara banget! Level pedasnya bisa diatur sesuai
+                            selera dan tetap kerasa rasa kuahnya. Dalgona coffee-nya juga creamy banget. Sangat
+                            cocok buat nongkrong sambil ngerjain tugas. Recommended banget!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Bakso Aci Tulang Rangu & Dalgona
+                                Original Chocolate</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="review-header">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Rafi Ahmad</h5>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                        <p class="text-muted mb-0">1 bulan yang lalu</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">"Ceker pedas level 5 bikin mata berair tapi bikin ketagihan! Harganya
+                            terjangkau banget untuk porsi yang lumayan besar. Next bakal beli lagi buat coba menu
+                            lainnya!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Ceker Pedas Level 5 & Grape Yakult
+                                Milk</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regular Reviews -->
+        <h3 class="mb-4">Ulasan Terbaru</h3>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="card-title">Putri Annisa</h5>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                        <p class="text-muted mb-3">3 hari yang lalu</p>
+                        <p class="card-text">"Wrap Korean-style-nya enak banget! Isinya banyak dan harganya worth it.
+                            Pelayanannya juga ramah, pesanan cepat selesai. Pasti bakal jadi langganan!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Kebab Daging Sepesial & Yummy
+                                Orange</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="card-title">Bayu Setiawan</h5>
+                            <div class="star-rating">★★★★☆</div>
+                        </div>
+                        <p class="text-muted mb-3">1 minggu yang lalu</p>
+                        <p class="card-text">"Rasa makanannya enak banget kayak di Korea! Cuma agak lama selesainya,
+                            kayanya karena banyak yang beli juga. Dalgona Original Redvelvet-nya enak tapi agak
+                            kemanisan buat saya. Overall tetap
+                            worth to try!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Macaroni Daebakk & Dalgona Original
+                                Redvelvet</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="card-title">Anita Dewi</h5>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                        <p class="text-muted mb-3">2 minggu yang lalu</p>
+                        <p class="card-text">"Seblak Hot Ceker-nya pas banget pedasnya! Biasanya suka kecewa kalau makan
+                            di
+                            tempat lain, tapi di sini rasanya authentic dan rempahnya melimpah. Dalgona Boba Bubble
+                            Gum-nya
+                            juga mantap, bobanya kenyal!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Seblak Hot Ceker & Dalgona Boba Bubble
+                                Gum</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="card-title">Rizky Pratama</h5>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                        <p class="text-muted mb-3">3 minggu yang lalu</p>
+                        <p class="card-text">"Nyobain Balungan Pedas-nya dan langsung jatuh cinta! Gurih dan lembut di
+                            mulut. Sambalnya melimpah. Harganya juga terjangkau banget buat mahasiswa seperti
+                            saya. Wajib dicoba!"</p>
+                        <p class="card-text"><small class="text-muted">Pesanan: Balungan Pedas</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Form -->
+        <div class="card review-card p-4 mb-5">
+            <h3 class="mb-4">Bagikan Pengalaman Kamu! 📝</h3>
+            <form id="reviewForm">
+                <div class="mb-3">
+                    <label for="reviewerName" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="reviewerName" placeholder="Masukkan nama kamu" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Rating</label>
+                    <div class="rating">
+                        <div class="d-flex align-items-center">
+                            <select id="ratingSelect" class="form-select" style="width: 100px;" required>
+                                <option value="">Pilih</option>
+                                <option value="5">5 ⭐</option>
+                                <option value="4">4 ⭐</option>
+                                <option value="3">3 ⭐</option>
+                                <option value="2">2 ⭐</option>
+                                <option value="1">1 ⭐</option>
+                            </select>
+                            <div id="ratingStars" class="ms-3 star-rating"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="foodOrdered" class="form-label">Pesanan</label>
+                    <select class="form-control" id="foodOrdered" required>
+                        <option value="">Pilih menu</option>
+                        <option value="Ceker Pedas">Ceker Pedas</option>
+                        <option value="Dakbal Pedas">Dakbal Pedas</option>
+                        <option value="Sayap Pedas">Sayap Pedas</option>
+                        <option value="Usus Pedas">Usus Pedas</option>
+                        <option value="Balungan Pedas">Balungan Pedas</option>
+                        <option value="Pentol Mercon Ori">Pentol Mercon Ori</option>
+                        <option value="Pentol Yaki">Pentol Yaki</option>
+                        <option value="Pentol Black Pepper">Pentol Black Pepper</option>
+                        <option value="Seblak Hot Original">Seblak Hot Original</option>
+                        <option value="Seblak Hot Ceker">Seblak Hot Ceker</option>
+                        <option value="Seblak Hot Seafood">Seblak Hot Seafood</option>
+                        <option value="Baso Aci Hot Original">Baso Aci Hot Original</option>
+                        <option value="Baso Aci Tulang Rangu">Baso Aci Tulang Rangu</option>
+                        <option value="Kebab Daging Sepesial">Kebab Daging Sepesial</option>
+                        <option value="Macaroni Daebakk">Macaroni Daebakk</option>
+                        <option value="Sosis Bakar Jumbo Premium">Sosis Bakar Jumbo Premium</option>
+                        <option value="Kentang Goreng">Kentang Goreng</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="reviewText" class="form-label">Ulasan</label>
+                    <textarea class="form-control" id="reviewText" rows="4"
+                        placeholder="Bagaimana pengalaman kamu di Noona Dalgona?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim Ulasan</button>
+            </form>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+            Terima kasih! Ulasan kamu telah berhasil dikirim dan akan ditampilkan setelah dimoderasi.
+        </div>
+    </div>
+    <div id="footer" class="bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Noona Dalgona</h5>
+                    <p>Surga cita rasa ala Korea & street food kekinian! 🧋🍜🌯</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Alamat</h5>
+                    <p>Perumahan Citra Medayu Residence Blok F No.12<br>Medokan Ayu, Kec.
+                        Rungkut<br>Surabaya </p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Jam Buka</h5>
+                    <p>Senin - Minggu: 10:00 - 22:00<br></p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="text-muted">&copy; 2025 Noona Dalgona. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-between">
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="nav-link d-flex align-items-center"
+                                href="https://maps.app.goo.gl/zewmZKcmTrKoKNXq6">
+                                <img src="10.jpg" alt="Icon 1" width="24" height="24" class="me-2">
+                                Lokasi kami
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="nav-link d-flex align-items-center"
+                                href="https://www.instagram.com/noonadalgona.id">
+                                <img src="11.jpg" alt="Icon 2" width="24" height="24" class="me-2">
+                                Instagram Kami
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="nav-link d-flex align-items-center" href="mailto:noonadalgona@gmail.com">
+                                <img src="12.jpg" alt="Icon 3" width="24" height="24" class="me-2">
+                                Email Kami
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="nav-link d-flex align-items-center"
+                                href="https://api.whatsapp.com/send/?phone=6285745250160&text&type=phone_number&app_absent=0&wame_ctl=1">
+                                <img src="13.jpg" alt="Icon 4" width="24" height="24" class="me-2">
+                                Contact Person
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- JAVASCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script>
+        // Update star display when rating changes
+        document.getElementById('ratingSelect').addEventListener('change', function () {
+            const rating = this.value;
+            const starsDiv = document.getElementById('ratingStars');
+            starsDiv.innerHTML = '';
+
+            if (rating) {
+                for (let i = 0; i < 5; i++) {
+                    if (i < rating) {
+                        starsDiv.innerHTML += '<span style="color: #FFD700; font-size: 24px;">★</span>';
+                    } else {
+                        starsDiv.innerHTML += '<span style="color: #ccc; font-size: 24px;">★</span>';
+                    }
+                }
+            }
+        });
+
+        // Form submission
+        document.getElementById('reviewForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Mendapatkan nilai dari form
+            const name = document.getElementById('reviewerName').value;
+            const rating = document.getElementById('ratingSelect').value;
+            const food = document.getElementById('foodOrdered').value;
+            const reviewText = document.getElementById('reviewText').value;
+
+            // Membuat elemen untuk review baru
+            const newReview = createNewReviewElement(name, rating, food, reviewText);
+
+            // Mencari kontainer "Ulasan Terbaru" row
+            const reviewHeadings = document.querySelectorAll('h3.mb-4');
+            let reviewsContainer;
+
+            // Mencari heading yang berisi teks "Ulasan Terbaru"
+            for (let i = 0; i < reviewHeadings.length; i++) {
+                if (reviewHeadings[i].textContent === "Ulasan Terbaru") {
+                    reviewsContainer = reviewHeadings[i].nextElementSibling;
+                    break;
+                }
+            }
+
+            // Jika kontainer tidak ditemukan, tambahkan ke bagian row pertama
+            if (!reviewsContainer) {
+                reviewsContainer = document.querySelector('.row');
+            }
+
+            // Menambahkan review baru ke row (dibawah review yang sudah ada)
+            reviewsContainer.appendChild(newReview);
+
+            // Clear form
+            this.reset();
+            document.getElementById('ratingStars').innerHTML = '';
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Automatically hide success message after 5 seconds
+            setTimeout(function () {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Fungsi untuk membuat elemen review baru
+        function createNewReviewElement(name, rating, food, reviewText) {
+            // Buat elemen div column untuk review
+            const colDiv = document.createElement('div');
+            colDiv.className = 'col-lg-6 mb-4';
+
+            // Generate star rating HTML
+            let starsHTML = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < parseInt(rating)) {
+                    starsHTML += '★';
+                } else {
+                    starsHTML += '☆';
+                }
+            }
+
+            // Isi HTML untuk review card
+            colDiv.innerHTML = `
+        <div class="card review-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <h5 class="card-title">${name}</h5>
+                    <div class="star-rating">${starsHTML}</div>
+                </div>
+                <p class="text-muted mb-3">Baru saja</p>
+                <p class="card-text">"${reviewText}"</p>
+                <p class="card-text"><small class="text-muted">Pesanan: ${food}</small></p>
+            </div>
+        </div>
+    `;
+
+            return colDiv;
+        }    
+    </script>
+
+    <script>
+        function activateBrowserSearch(event) {
+            event.preventDefault(); // Mencegah reload form
+
+            const searchTerm = document.getElementById('searchInput').value;
+
+            if (searchTerm.trim() === "") {
+                alert("Silakan masukkan kata untuk dicari.");
+                return;
+            }
+
+            // Gunakan fungsi pencarian bawaan browser
+            const found = window.find(searchTerm);
+
+            if (!found) {
+                alert("Kata tidak ditemukan di halaman.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
